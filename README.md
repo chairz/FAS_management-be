@@ -1,6 +1,6 @@
 # Financial Assistance Scheme Management System
 
-This project is a backend service for managing financial assistance schemes, applicants, and their applications. It is built with FastAPI and MySQL, and is containerized using Docker for easy setup and deployment.
+This project is a backend service for managing financial assistance schemes, applicants, and their applications. It is built on macOS with FastAPI and MySQL, and is containerized using Docker for easy setup and deployment.
 
 ## Table of Contents
 - [Overview](#overview)
