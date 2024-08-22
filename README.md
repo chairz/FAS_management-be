@@ -18,7 +18,7 @@ This project is a backend service for managing financial assistance schemes, app
 
 - **`app/`**: Contains the core logic of the application.
   - **`crud/`**: Houses all CRUD operations, which are divided by tables. This structure keeps operations related to different tables separated, making the codebase easier to maintain.
-  - **`db/`**: Contains database configurations, connection management, and the SQLAlchemy models that define the database schema.
+  - **`db/`**: Contains database configurations, connection management, and the SQLAlchemy models that define the database schema. For a detailed explanation of the database schema, please refer to the [Database Schema Documentation](app/db/db_schema.md)
   - **`router/`**: Contains all the route handlers, each categorized by the type of entity they manage (e.g., `auth`, `applicants`, `schemes`, `applications`).
   - **`schemas/`**: Contains Pydantic models that define the structure of request and response bodies for each API endpoint. This ensures data validation and serialization are handled cleanly.
   - **`dependencies.py`**: Contains shared dependencies that are injected into routes. This might include functions authenticating JWTs, database session, etc.
@@ -91,7 +91,7 @@ Sample JSON request data is provided in the `sample_request_data` folder. You ca
 You can use the following command to create an applicant using the sample data:
 
 ```bash
-curl -X POST "http://localhost:8000/api/applicants" -H "Content-Type: application/json" -d @sample_data/create_applicant.json
+curl -X POST "http://localhost:8000/api/applicants" -H "Content-Type: application/json" -d @sample_request_data/create_applicant.json
 ```
 
 ## API Documentation
