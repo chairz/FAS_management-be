@@ -1,0 +1,19 @@
+{
+    "name": "Retrenchment Assistance",
+    "description": "Financial assistance for recently retrenched workers.",
+    "marital_status_required": "single",
+    "employment_status_required": "unemployed",
+    "required_relationships": ["daughter"],
+    "household_size": 2,
+    "benefits": [
+        {
+            "description": "Additional SkillsFuture credits",
+            "amount": 500
+        },
+        {
+            "description": "Daily school meal vouchers",
+            "condition": "For applicants with school-going children",
+            "amount": 100
+        }
+    ]
+}

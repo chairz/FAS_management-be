@@ -3,15 +3,39 @@
 This project is a backend service for managing financial assistance schemes, applicants, and their applications. It is built with FastAPI and MySQL, and is containerized using Docker for easy setup and deployment.
 
 ## Table of Contents
+- [Overview](#overview)
 - [Prerequisites](#prerequisites)
 - [Setup](#setup)
   - [Clone the Repository](#clone-the-repository)
   - [Environment Variables](#environment-variables)
   - [Docker Setup](#docker-setup)
 - [Running the Application](#running-the-application)
+- [Sample Request Data](#sample-request-data)
 - [API Documentation](#api-documentation)
 
 
+### **Overview**
+
+- **`app/`**: Contains the core logic of the application.
+  - **`crud/`**: Houses all CRUD operations, which are divided by tables. This structure keeps operations related to different tables separated, making the codebase easier to maintain.
+  - **`db/`**: Contains database configurations, connection management, and the SQLAlchemy models that define the database schema.
+  - **`router/`**: Contains all the route handlers, each categorized by the type of entity they manage (e.g., `auth`, `applicants`, `schemes`, `applications`).
+  - **`schemas/`**: Contains Pydantic models that define the structure of request and response bodies for each API endpoint. This ensures data validation and serialization are handled cleanly.
+  - **`dependencies.py`**: Contains shared dependencies that are injected into routes. This might include functions authenticating JWTs, database session, etc.
+  - **`main.py`**: The main entry point of the application, where the FastAPI app is instantiated and routers are included.
+  - **`config/`**: Contains configuration files, including settings for logging and other application-wide configurations.
+
+- **`sample_data/`**: Contains JSON files with sample request data for testing each endpoint. This allows for quick and easy testing of the API.
+
+- **`Dockerfile`**: Defines the Docker image for the FastAPI application. It installs the necessary dependencies and sets up the environment.
+
+- **`docker-compose.yml`**: Sets up the entire application stack, including the FastAPI app and the MySQL database, using Docker Compose.
+
+- **`requirements.txt`**: Lists all the Python packages that the application depends on.
+
+- **`config.env`**: Contains environment variables that configure the application, such as database connection details and secret keys.
+
+- **`README.md`**: Provides documentation for the project, including setup instructions, API usage, and project structure.
 
 ## Prerequisites
 
@@ -58,6 +82,17 @@ This command will:
 
 Once the containers are running, the application will be available at http://localhost:8000.
 
+## Sample Request Data
+
+Sample JSON request data is provided in the `sample_request_data` folder. You can use these files to test the API endpoints.
+
+### Example Usage with Curl
+
+You can use the following command to create an applicant using the sample data:
+
+```bash
+curl -X POST "http://localhost:8000/api/applicants" -H "Content-Type: application/json" -d @sample_data/create_applicant.json
+```
 
 ## API Documentation
 Once the application is running, you can access the API documentation at:

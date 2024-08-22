@@ -1,0 +1,19 @@
+{
+    "name": "John Doe",
+    "ic_number": "S1234567A",
+    "date_of_birth": "1985-08-15",
+    "sex": "Male",
+    "employment_status": "Employed",
+    "marital_status": "Divorced",
+    "household_members": [
+        {
+            "name": "Jane Doe",
+            "ic_number": "S7654321B",
+            "date_of_birth": "2010-05-25",
+            "sex": "Female",
+            "employment_status": "Unemployed",
+            "marital_status": "Single",
+            "relation_to_applicant": "daughter"
+        }
+    ]
+}
