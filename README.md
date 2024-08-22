@@ -22,8 +22,9 @@ This project is a backend service for managing financial assistance schemes, app
   - **`router/`**: Contains all the route handlers, each categorized by the type of entity they manage (e.g., `auth`, `applicants`, `schemes`, `applications`).
   - **`schemas/`**: Contains Pydantic models that define the structure of request and response bodies for each API endpoint. This ensures data validation and serialization are handled cleanly.
   - **`dependencies.py`**: Contains shared dependencies that are injected into routes. This might include functions authenticating JWTs, database session, etc.
-  - **`main.py`**: The main entry point of the application, where the FastAPI app is instantiated and routers are included.
   - **`config/`**: Contains configuration files, including settings for logging and other application-wide configurations.
+
+- **`main.py`**: The main entry point of the application, where the FastAPI app is instantiated and routers are included.
 
 - **`sample_data/`**: Contains JSON files with sample request data for testing each endpoint. This allows for quick and easy testing of the API.
 
